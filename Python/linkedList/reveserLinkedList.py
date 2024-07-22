@@ -1,7 +1,12 @@
-def reverse_list(self, head):
+def reverse_list(head):
+    
+    if head is None or head.Next is None:
+        return head
+    
     current = head
     before = None
     after = None
+    
     while current is not None:
         after = current.next
         current.next = before
