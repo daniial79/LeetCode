@@ -31,7 +31,6 @@ SELECT
     user_id AS id,
     friends AS num
 FROM FriendsNumberCTE
-GROUP BY id, friends
-HAVING num = (
+WHERE friends = (
     SELECT MAX(friends) FROM FriendsNumberCTE
 );
